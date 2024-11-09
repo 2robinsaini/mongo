@@ -30,20 +30,13 @@ curl --location 'localhost:8080/mongo/insertUsers' \
 ]'
 
 4. delete/remove user
-curl --location 'localhost:8080/mongo/insertUsers' \
+curl --location --request DELETE 'localhost:8080/mongo/removeUser' \
 --header 'Content-Type: application/json' \
---data-raw '[
-    {
-        "name": "virat kohli",
-        "age": 23,
-        "email": "kohli@gmail.com"
-    },
-    {
-        "name": "rohit sharma",
-        "age": 24,
-        "email": "rohit@gmail.com"
-    }
-]'
+--data-raw '{
+    "name": "robin",
+    "age":20,
+    "email":"robin@gmail.com"
+}'
 
 5. Update user
 curl --location --request PUT 'localhost:8080/mongo/updateUser' \
