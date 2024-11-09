@@ -1,0 +1,55 @@
+------------------ APIs Postman Collection -----------------------------
+------------------- CRUD Operation -------------------------------------
+
+1. Retrieve
+curl --location 'localhost:8080/mongo/data'
+
+2. Create
+curl --location 'localhost:8080/mongo/insertUser' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Bumrah",
+    "age":25,
+    "email":"bumrah@gmail.com"
+}'
+
+3. Create Multiple User
+curl --location 'localhost:8080/mongo/insertUsers' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    {
+        "name": "virat kohli",
+        "age": 23,
+        "email": "kohli@gmail.com"
+    },
+    {
+        "name": "rohit sharma",
+        "age": 24,
+        "email": "rohit@gmail.com"
+    }
+]'
+
+4. delete/remove user
+curl --location 'localhost:8080/mongo/insertUsers' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    {
+        "name": "virat kohli",
+        "age": 23,
+        "email": "kohli@gmail.com"
+    },
+    {
+        "name": "rohit sharma",
+        "age": 24,
+        "email": "rohit@gmail.com"
+    }
+]'
+
+5. Update user
+curl --location --request PUT 'localhost:8080/mongo/updateUser' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "rohit sharma",
+    "age":30,
+    "email":"r.sharma@gmail.com"
+}'
